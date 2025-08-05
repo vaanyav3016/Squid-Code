@@ -13,19 +13,17 @@
       @import url("https://fonts.googleapis.com/css?family=Kanit:300,400,600,700");
 
       :root {
-        --squid-pink: #ff4d6d;
-        --squid-blue: #3a86ff;
-        --squid-green: #38b000;
-        --squid-red: #d00000;
-        --squid-dark: #1a1a2e;
-      }
+        --pink: #ff4d6d;
+        --blue: #3a86ff;
+        --green: #38b000;
+        --red: #d00000;
+        --dark: #1a1a2e;}
 
       body {
         font-family: "Kanit", sans-serif;
-        background-color: var(--squid-dark);
+        background-color: var(--dark);
         color: white;
-        overflow-x: hidden;
-      }
+        overflow-x: hidden;}
 
       .btn {
         transition: all 0.3s;
@@ -52,12 +50,12 @@
         border-color: rgba(255, 255, 255, 0.2);
       }
 
-      .player-status {
+      .status {
         position: relative;
         overflow: hidden;
       }
 
-      .player-status::after {
+      .status::after {
         content: "";
         position: absolute;
         left: 0;
@@ -91,7 +89,7 @@
 
       .masked-input:focus {
         outline: none;
-        border-color: var(--squid-pink);
+        border-color: var(--pink);
         background-color: rgba(255, 255, 255, 0.2);
       }
 
@@ -103,8 +101,8 @@
       }
 
       .tab.active {
-        border-bottom-color: var(--squid-pink);
-        color: var(--squid-pink);
+        border-bottom-color: var(--pink);
+        color: var(--pink);
       }
 
       .tab:hover:not(.active) {
@@ -112,7 +110,7 @@
       }
     </style>
   </head>
-  <body class="min-h-screen">
+  <body class="minscreen">
     <!-- login/signup -->
     <div
       id="entrypopup"
@@ -180,7 +178,7 @@
       </div>
 
       <!-- registration form-->
-      <div id="register-form" class="w-full max-w-md p-8 card hidden absolute">
+      <div id="registerform" class="w-full max-w-md p-8 card hidden absolute">
         <div class="text-center mb-8">
           <img
             src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b7836617-1ee5-4e38-a28e-172c88702c06.png"
@@ -249,7 +247,7 @@
     </div>
 
     <!-- platform -->
-    <div id="platform" class="hidden min-h-screen">
+    <div id="platform" class="hidden minscreen">
       <header class="bg-slate-900 border-b border-gray-800 sticky top-0 z-40">
         <div
           class="container mx-auto px-4 py-3 flex items-center justify-between"
@@ -902,9 +900,9 @@
               .getElementById("playerlogin")
               .closest("div")
               .classList.add("hidden");
-            document.getElementById("register-form").classList.remove("hidden");
+            document.getElementById("registerform").classList.remove("hidden");
             setTimeout(() => {
-              document.getElementById("register-form").style.opacity = "1";
+              document.getElementById("registerform").style.opacity = "1";
             }, 50);
           }, 300);
         });
@@ -913,9 +911,9 @@
         .getElementById("show-login")
         .addEventListener("click", function (e) {
           e.preventDefault();
-          document.getElementById("register-form").style.opacity = "0";
+          document.getElementById("registerform").style.opacity = "0";
           setTimeout(() => {
-            document.getElementById("register-form").classList.add("hidden");
+            document.getElementById("registerform").classList.add("hidden");
             document
               .getElementById("playerlogin")
               .closest("div")
@@ -993,3 +991,4 @@
     </script>
   </body>
 </html>
+
